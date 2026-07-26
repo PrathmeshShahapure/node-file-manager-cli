@@ -3,6 +3,7 @@ import exitApp from "./operations/exitApp.js";
 import readFile from "./operations/readFile.js";
 import appendContent from "./operations/appendContent.js"
 import renameFile from "./operations/renameFile.js";
+import deleteFile from "./operations/deleteFile.js";
 const displayMenu = (rl) => {
 
   rl.question(
@@ -41,6 +42,7 @@ Choose an option:`,
           break;
         case "5":
           console.log(`You Choose Delete File.`);
+          deleteFile(rl,displayMenu)
           break;
         case "6":
               console.log(`You Choose to Exit`);
