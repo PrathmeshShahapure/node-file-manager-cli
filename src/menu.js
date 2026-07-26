@@ -1,7 +1,10 @@
+import createFile from "./operations/createFile.js";
+import exitApp from "./operations/exitApp.js";
 
-const displayMenu = () => {
+const displayMenu = (rl) => {
 
-    console.log(`
+  rl.question(
+    `
         
 =========================================
         📂 Node File Manager CLI
@@ -14,7 +17,37 @@ const displayMenu = () => {
 5. 🗑 Delete File
 6. 🚪 Exit
 
-`);
+Choose an option:`,
+
+    (ans) => {
+      switch (ans) {
+        case "1":
+              console.log(`You Choose Create File.`);
+              createFile(rl, displayMenu);
+          break;
+        case "2":
+          console.log(`You Choose Read File.`);
+          break;
+        case "3":
+          console.log(`You Choose Append File.`);
+          break;
+        case "4":
+          console.log(`You Choose Rename File.`);
+          break;
+        case "5":
+          console.log(`You Choose Delete File.`);
+          break;
+        case "6":
+              console.log(`You Choose to Exit`);
+              exitApp(rl)
+          break;
+
+        default:
+          console.log(`Your input is invalid `);
+          break;
+      }
+    },
+  );
 };
 
 export default displayMenu;
