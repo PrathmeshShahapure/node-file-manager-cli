@@ -2,7 +2,7 @@ import createFile from "./operations/createFile.js";
 import exitApp from "./operations/exitApp.js";
 import readFile from "./operations/readFile.js";
 import appendContent from "./operations/appendContent.js"
-
+import renameFile from "./operations/renameFile.js";
 const displayMenu = (rl) => {
 
   rl.question(
@@ -37,6 +37,7 @@ Choose an option:`,
           break;
         case "4":
           console.log(`You Choose Rename File.`);
+          renameFile(rl,displayMenu)
           break;
         case "5":
           console.log(`You Choose Delete File.`);
