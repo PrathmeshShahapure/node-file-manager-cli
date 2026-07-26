@@ -1,5 +1,6 @@
 import createFile from "./operations/createFile.js";
 import exitApp from "./operations/exitApp.js";
+import readFile from "./operations/readFile.js";
 
 const displayMenu = (rl) => {
 
@@ -27,6 +28,7 @@ Choose an option:`,
           break;
         case "2":
           console.log(`You Choose Read File.`);
+          readFile(rl,displayMenu)
           break;
         case "3":
           console.log(`You Choose Append File.`);
